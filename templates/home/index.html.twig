@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('app_add_note') }}" class="button">NOUVELLE NOTE</a>
+
+    <div id="notes">
+        {% for note in notes %}
+            <a href="/note/edit/{{ note.id }}">
+                <div class="note">
+                    <div>{{ note.content|length > 18 ? note.content|slice(0, 15) ~ '...' : note.content }}</div>
+                    <div class="note-date">{{ note.date|date('d/m/Y') }}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

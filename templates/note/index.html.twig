@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <h2>{{ form_label(form.content) }}</h2>
+        {{ form_widget(form.content) }}
+        {{ form_widget(form.submit) }}
+        
+        {% if '/note/edit/' in app.request.pathinfo %}
+            <a href="/note/delete/{{ note.id }}" class="button">Supprimer</a>
+        {% endif %}
+    {{ form_end(form) }}
+{% endblock %}

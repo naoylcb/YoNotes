@@ -1,0 +1,22 @@
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 100px black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header-title {
+    color: #00092E;
+}
+
+.header-button {
+    background-color: #00092E;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.header-button:hover {
+    background-color:  #011C8A;
+}

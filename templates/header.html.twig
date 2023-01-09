@@ -1,0 +1,18 @@
+<header>
+    <div>
+        <h1><a href="{{ path('app_home') }}" id="header-title">YONOTES</a></h1>
+    </div>
+
+    <div>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('app_logout') }}" class="header-button">DÉCONNEXION</a>
+    {% else %}
+        {% if '/login' in app.request.pathinfo %}
+            <a href="{{ path('app_authentication_register') }}" class="header-button">S'INSCRIRE</a>
+        {% else %}
+            <a href="{{ path('app_authentication_login') }}" class="header-button">SE CONNECTER</a>
+        {% endif %}
+    {% endif %}
+    </div>
+
+</header>

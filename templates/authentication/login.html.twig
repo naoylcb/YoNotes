@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'authentication/welcome.html.twig' %}
+
+    <div class="form">
+        {% if error %}
+            <div class="form-errors">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <form action="{{ path('app_authentication_login') }}" method="post">
+            <div class="form-fields">
+                <div><label for="username">Pseudo :</label></div>
+                <input type="text" id="username" name="_username" required>
+            </div>
+
+            <div class="form-fields">
+                <div><label for="password">Mot de passe :</label></div>
+                <input type="password" id="password" name="_password" required>
+            </div>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+{% endblock %}
